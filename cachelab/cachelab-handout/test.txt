@@ -1,0 +1,16 @@
+L 10d0c0,4 miss eviction 
+S 14d880,4 miss eviction 
+L 10d0c4,4 hit 
+S 14d900,4 miss eviction 
+L 10d0c8,4 hit 
+S 14d980,4 miss eviction 
+L 10d0cc,4 hit 
+S 14da00,4 miss eviction 
+L 10d0d0,4 hit 
+S 14da80,4 miss eviction 
+L 10d0d4,4 hit 
+S 14db00,4 miss eviction 
+L 10d0d8,4 hit 
+S 14db80,4 miss eviction 
+L 10d0dc,4 hit 
+S 14dc00,4 miss eviction 

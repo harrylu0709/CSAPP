@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.c": "c",
+        "stdio.h": "c",
+        "unistd.h": "c",
+        "cachelab.h": "c",
+        "string.h": "c",
+        "stdlib.h": "c",
+        "getopt.h": "c",
+        "limits": "c"
+    }
+}
