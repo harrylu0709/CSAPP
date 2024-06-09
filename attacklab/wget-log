@@ -1,0 +1,19 @@
+--2024-02-17 15:10:31--  http://csapp.cs.cmu.edu/3e/target1.tar
+Resolving csapp.cs.cmu.edu (csapp.cs.cmu.edu)... 128.2.100.230
+Connecting to csapp.cs.cmu.edu (csapp.cs.cmu.edu)|128.2.100.230|:80... connected.
+HTTP request sent, awaiting response... Read error (Connection timed out) in headers.
+Retrying.
+
+--2024-02-17 15:25:32--  (try: 2)  http://csapp.cs.cmu.edu/3e/target1.tar
+Connecting to csapp.cs.cmu.edu (csapp.cs.cmu.edu)|128.2.100.230|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 174080 (170K) [application/x-tar]
+Saving to: ‘target1.tar’
+
+     0K .......... .......... .......... .......... .......... 29%  118K 1s
+    50K .......... .......... .......... .......... .......... 58%  234K 0s
+   100K .......... .......... .......... .......... .......... 88%  250K 0s
+   150K .......... ..........                                 100% 1.49M=0.9s
+
+2024-02-17 15:25:33 (200 KB/s) - ‘target1.tar’ saved [174080/174080]
+

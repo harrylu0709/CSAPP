@@ -1,0 +1,14 @@
+--2024-02-17 15:16:49--  http://csapp.cs.cmu.edu/3e/target1.tar
+Resolving csapp.cs.cmu.edu (csapp.cs.cmu.edu)... 128.2.100.230
+Connecting to csapp.cs.cmu.edu (csapp.cs.cmu.edu)|128.2.100.230|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 174080 (170K) [application/x-tar]
+Saving to: ‘target1.tar’
+
+     0K .......... .......... .......... .......... .......... 29%  118K 1s
+    50K .......... .......... .......... .......... .......... 58%  231K 0s
+   100K .......... .......... .......... .......... .......... 88%  252K 0s
+   150K .......... ..........                                 100% 1.98M=0.8s
+
+2024-02-17 15:16:51 (200 KB/s) - ‘target1.tar’ saved [174080/174080]
+

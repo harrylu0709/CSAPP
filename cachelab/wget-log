@@ -1,0 +1,26 @@
+--2024-02-17 15:22:31--  http://csapp.cs.cmu.edu/3e/cachelab.pdf
+Resolving csapp.cs.cmu.edu (csapp.cs.cmu.edu)... 128.2.100.230
+Connecting to csapp.cs.cmu.edu (csapp.cs.cmu.edu)|128.2.100.230|:80... connected.
+HTTP request sent, awaiting response... Read error (Connection timed out) in headers.
+Retrying.
+
+--2024-02-17 15:37:32--  (try: 2)  http://csapp.cs.cmu.edu/3e/cachelab.pdf
+Connecting to csapp.cs.cmu.edu (csapp.cs.cmu.edu)|128.2.100.230|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 47072 (46K) [application/pdf]
+Saving to: ‘cachelab.pdf’
+
+     0K ..                                                      5% 66.3 =39s
+
+2024-02-17 15:53:51 (66.3 B/s) - Read error at byte 2614/47072 (Connection timed out). Retrying.
+
+--2024-02-17 15:53:53--  (try: 3)  http://csapp.cs.cmu.edu/3e/cachelab.pdf
+Connecting to csapp.cs.cmu.edu (csapp.cs.cmu.edu)|128.2.100.230|:80... connected.
+HTTP request sent, awaiting response... 206 Partial Content
+Length: 47072 (46K), 44458 (43K) remaining [application/pdf]
+Saving to: ‘cachelab.pdf’
+
+     0K ,,........ .......... .......... .......... .....     100%  103K=0.4s
+
+2024-02-17 15:53:54 (103 KB/s) - ‘cachelab.pdf’ saved [47072/47072]
+

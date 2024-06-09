@@ -1,0 +1,15 @@
+--2024-02-17 15:18:10--  https://gitee.com/lin-xi-269/csapplab/raw/origin/lab4archlab/install.sh
+Resolving gitee.com (gitee.com)... 182.255.33.134
+Connecting to gitee.com (gitee.com)|182.255.33.134|:443... failed: Connection timed out.
+Retrying.
+
+--2024-02-17 15:20:23--  (try: 2)  https://gitee.com/lin-xi-269/csapplab/raw/origin/lab4archlab/install.sh
+Connecting to gitee.com (gitee.com)|182.255.33.134|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 369 [text/plain]
+Saving to: ‘installlab4archlab.sh’
+
+     0K                                                       100% 67.7M=0s
+
+2024-02-17 15:20:24 (67.7 MB/s) - ‘installlab4archlab.sh’ saved [369/369]
+
