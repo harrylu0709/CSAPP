@@ -1,0 +1,109 @@
+cd csapplab/bomblab/bomb
+b *0x40162b
+b *0x401242
+b *0x40126e
+Border relations with Canada have never been better.
+1 2 4 8 16 32 
+0 207
+0 0 DrEvil
+ionefg
+4 3 2 1 6 5
+20/22
+
+
+
+
+Border relations with Canada have never been better.
+1 2 4 8 16 32 
+0 207
+1 311
+2 707
+3 256
+4 389
+5 206
+6 682
+7 327
+
+0 0
+1 0
+3 0
+7 0
+
+9  : ) I i 9 Y y
+15 : / O o ? _
+14 : . N n > ^ ~
+5  : % E e 5 U u
+6  : & F f 6 V v
+7  : ' G g 7 W w
+
+6 5 4 3 2 1
+*(rsp+0)=6
+*(rsp+20)=5
+
+
+b *0x40110b
+
+b *0x401158
+
+b *0x4011ab
+
+flyers //102 108 121 101 114 115
+b *0x40107f
+     0x40107f <phase_5+29>   cmp    $0x6,%eax    
+│   0x401082 <phase_5+32>   je     0x4010d2 <phase_5+112>                                                       │
+│   0x401084 <phase_5+34>   callq  0x40143a <explode_bomb>                                                      │
+│   0x401089 <phase_5+39>   jmp    0x4010d2 <phase_5+112>                                                       │
+│   0x40108b <phase_5+41>   movzbl (%rbx,%rax,1),%ecx                                                           │
+│   0x40108f <phase_5+45>   mov    %cl,(%rsp)                                                                   │
+│   0x401092 <phase_5+48>   mov    (%rsp),%rdx                                                                  │
+│   0x401096 <phase_5+52>   and    $0xf,%edx                                                                    │
+│  >0x401099 <phase_5+55>   movzbl 0x4024b0(%rdx),%edx  
+
+
+
+
+(gdb) x/s 0x4024b0 
+0x4024b0 <array.3449>:  "maduiersnfotvbylSo you think you can stop the bomb with ctrl-c, do you?"
+                         0123456789
+
+
+
+
+
+
+
+int func4(int target /*x*/,int a/*0*/,int b/*14*/)
+{
+   int mid = a + (b - a)/2;
+   if(mid <= target)
+   {
+     if(mid >= target)
+     {
+       return 0;
+     }
+	 return 2*func4(target,mid+1,b)+1;
+   }	
+ 
+   return 2*func4(target,a,mid-1);
+}
+
+
+
+
+pushl %eax
+将eax数值压入栈中，可分解为：
+subl $4, %esp ——> esp = esp - 4
+movl %eax, (%esp) ——> *(int32_t *)esp = eax
+
+%rsp = 0x7fffffffd880
+
+//輸入的值給7減掉
+   0x00401153 <+95>:    lea    0x18(%rsp),%rsi        // %rsi=%rsp+24 //&input[6]
+   0x00401158 <+100>:   mov    %r14,%rax              // %rax = r14
+   0x0040115b <+103>:   mov    $0x7,%ecx              // %ecx = 7
+   0x00401160 <+108>:   mov    %ecx,%edx              // %edx = %ecx = 7
+   0x00401162 <+110>:   sub    (%rax),%edx            // %edx = 7 - *(%rax) = 7 -*(%r14)
+   0x00401164 <+112>:   mov    %edx,(%rax)            // *(%rax) = %edx
+   0x00401166 <+114>:   add    $0x4,%rax              // %rax += 4
+   0x0040116a <+118>:   cmp    %rsi,%rax         
+   0x0040116d <+121>:   jne    0x401160 <phase_6+108> //if(%rax != %rsi) jmp 108

